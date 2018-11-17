@@ -1,0 +1,9 @@
+
+1. Copy command :
+cp -r igaindev.appliedai.info/htdocs abc.com/
+
+2. Change user ownership :
+sudo chown -R xl-user.xl-user abc.com
+
+3. Zip command
+zip -r squash.zip dir1

@@ -1,0 +1,147 @@
+1: To COMPRESS a directory:
+	tar -cvzf tar-archive-name.tar.gz source-folder-name
+2: To extract a tar.gz compressed file:
+	tar -zxvf tar-archive-name.tar.gz
+	unzip zipfile.zip	//to extract zip file 
+	
+3 a: Taking mysql database BACKUP:
+	cd to directory where u want to keep the backup file and issue the following command.
+	mysqldump -u [username] -p[password] database_name > dump_file_name.sql
+
+3 b: Importing mysql dumpfile into database
+	mysql -u [username] -p[password] database_name < dump_file_name.sql
+	
+4: MOVE/MOVING directory with contents:
+	mv -r /path/to/source /path/to/dest
+
+5: moving multiple directories
+	Use the following syntax to move dir1 and dir2 to /path/to/dest/ directory:
+	mv -v dir1 dir2 /path/to/dest/
+	
+6: LIST contents with hidden files
+	ls -a
+	
+7: Compute and Check MD5 Message Digest
+	md5sum teamviewer_linux.deb
+
+8: print DETAILED information about the machine name, Operating System and Kernel.
+	uname -a
+	
+9: prints the HISTORY of long list of executed commands in terminal.
+	history
+	
+10: allows a permitted user to execute a command as the SUPERUSER
+	sudo [your command]
+	
+11: CREATE directory
+	mkdir directory_name
+	
+12: PRINT working directory
+	pwd
+	
+13: COPY file from one location to another
+	cp /home/user/Downloads abc.tar.gz /home/user/Desktop
+
+14:	CONCATENATE two or more plain file and/or print contents of a file on standard output.
+	cat a.txt b.txt c.txt d.txt abcd.txt OR
+	cat abcd.txt
+	
+15: print current DATE and TIME:
+	date
+	
+16: CALENDAR of the present month:
+	cal
+	
+17: apt command: Package Manager search, install, update and resolves dependency of packages
+	apt-get install mplayer
+
+18: Running shell scripts e.g. running dcs.sh
+	 sudo bash dcs.sh
+	 
+19: Copying files/directory from one server to another server. for this first of all we have to add the public key of the server in which we are logged in to the authorized keys of the remote server.
+	$ scp /local/dir_to_copy  user@remoteServerIP:/remote/dir/fileToBeCopiedIn
+
+20: history | greb command
+	$ history | grep "filter_token"
+		e.g $ history | grep "scp" //. will find and return all previous commands containing "scp".
+
+21: stop iptables
+	$ sudo service iptables stop
+
+22: check hard drive space
+	$ df -h
+
+23: check RAM free space
+	$ free -m
+
+24: To determine the size of a file called /bin/grep, enter:
+	$ ls -lh /bin/grep	OR
+	$ du -h /bin/grep
+		OR for more detail information issue this command.
+	$ stat /bin/grep
+
+25: To run java prograph with 2GB memory.
+	$ java -Xmx2g -jar jarFile.jar
+26: to check free memory:
+	$ free
+27: memory usage state
+	$ vmstat -t 1
+28: To check top processes in terms of memory
+	$ top
+29: memory info
+	$ cat /proc/meminfo
+30: Check OS - Operating System version
+	$ cat /etc/*release*
+
+31: disable SELINUX
+	edit: /etc/selinux/config
+	set: SELINUX=disabled
+	reboot is needed
+
+31: Enable SELINUX
+	edit: /etc/selinux/config
+	set: SELINUX=permissive
+	reboot is needed
+
+32: if you don't want nohup to create nohup.out file then add /dev/null & to the end of nohup command e.g.
+	$ your_nohup_comand > /dev/null &
+
+33: to view contents of a larg log file in terminal:
+	$ less path_to_log_file
+	$ more -f path_to_log_file
+	$ cat path_to_log_file
+	$ tail -f path_to_log_file
+	$ grep -i error /var/log/messages
+
+34: install c/c++ compiler
+	$ yum install gcc-c++
+
+35: count number of lines in a file
+	$ wc -l <filename>
+
+36: creating/exporting environmnent variables.
+	i. create an .sh file in /etc/profile.d/ directory
+		$ sudo nano /etc/profile.d/myenvironmentvariables.sh
+	ii. export your variable paths here e.g.
+		export JAVA_HOME=<path to java home directory>
+		export PATH=$PATH:$JAVA_HOME/bin
+	iii. save the file and reboot your server or use "source <.sh file name>" command for variables to take effect.
+		$ source /etc/profile.d/myenvironmentvariables.sh
+		
+	Note: now you can add/export all of your environment variables here in this .sh file.
+		don't forget to reboot or use "source <.sh file name>" after exporting new env variables.
+
+37: Uninstall rpm packages...
+	i. run the following to to list the packages
+		$ rpm -qa | grep -i <package name>
+	ii. to remove rpm run the following
+		$ rpm -e <package name>
+
+38: update yum repository.
+	i. run the following commands, run twice if necessary
+		$ sudo yum clean all
+		$ sudo yum update
+
+39: to remove postgresql.
+	$ yum erase postgresql94*
+	
